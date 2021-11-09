@@ -6,6 +6,7 @@
 /* цвет акцента #2196f3 */
 /* цвет ховер главной кнопки #188ce8 */
 /* цвет текста в футере rgba(255, 255, 255, 0.6) */
+/* цвет фона иконок в футере rgba(255, 255, 255, 0.1); */
 /* цвет фона карточек #EEEEEE */
 
 :root {
@@ -19,6 +20,7 @@
   --footer-text-color: rgba(255, 255, 255, 0.6);
   --bg-color-card: #eeeeee;
   --main-icons-color: #afb1b8;
+  --bg-icons-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Убираем внешние отступы */
@@ -109,6 +111,12 @@ button {
 .button:hover,
 .button:focus {
   background-color: var(--hover-main-btn-color);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
 }
 
 /* ---------- HEADER ---------- */
@@ -219,7 +227,16 @@ button {
   background-color: var(--footer-bg-color);
 }
 
-.footer .logo {
+.footer .container {
+  display: flex;
+  align-items: baseline;
+}
+
+.footer-contact {
+  margin-right: 70px;
+}
+
+.footer-contact .logo {
   display: block;
   margin-bottom: 20px;
 }
@@ -228,14 +245,14 @@ button {
   color: var(--accent-text-and-bg-color);
 }
 
-.footer-contact {
+.main-contact {
   font-size: 14px;
   line-height: 1.71;
   font-style: normal;
 }
 
-.contact-item + .contact-item {
-  margin-top: 9px;
+.contact-item:not(:last-child) {
+  margin-bottom: 9px;
 }
 
 .address {
@@ -243,9 +260,53 @@ button {
   text-decoration: none;
 }
 
-.footer-contact .link {
+.main-contact .link {
   color: var(--footer-text-color);
   text-decoration: none;
+}
+
+.footer-icons {
+  display: flex;
+}
+
+.social-list:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-list > .social-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  color: var(--main-icons-color);
+  border-radius: 50%;
+}
+
+.footer-icons .social-item {
+  background-color: var(--bg-icons-color);
+}
+
+.footer-icons .social-icon {
+  color: var(--accent-text-and-bg-color);
+}
+
+.footer-icons .social-item:hover,
+.footer-icons .social-item:focus,
+.team-social .social-item:hover,
+.team-social .social-item:focus {
+  color: var(--accent-text-and-bg-color);
+  background-color: var(--accent-color);
+}
+
+.footer-social > .text {
+  margin-bottom: 20px;
+  color: var(--accent-text-and-bg-color);
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
 }
 
 /* ---------- HERO ---------- */
@@ -392,32 +453,6 @@ button {
 .team-social {
   display: flex;
   justify-content: center;
-}
-
-.team-social-item:not(:last-child) {
-  margin-right: 10px;
-}
-
-.social-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  color: var(--main-icons-color);
-  border-radius: 50%;
-}
-
-.social-icon {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-}
-
-.social-item:hover,
-.social-item:focus {
-  color: var(--accent-text-and-bg-color);
-  background-color: var(--accent-color);
 }
 
 /* ---------- CLIENTS ---------- */
